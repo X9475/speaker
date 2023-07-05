@@ -1,0 +1,167 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CIRCLE	music_player/player.h	13;"	d
+DEVICE_H	music_player/device.h	2;"	d
+FAILURE	music_player/main.h	5;"	d
+FindNextMusic	music_player/link.c	/^void FindNextMusic(const char *cur, int mode, char *next)$/;"	f
+GetMusic	music_player/player.c	/^void GetMusic()$/;"	f
+IP	MusicAPP/widget.h	15;"	d
+IP	music_server/server.h	17;"	d
+InitDriver	music_player/device.c	/^int InitDriver()$/;"	f
+InitLink	music_player/link.c	/^int InitLink()$/;"	f
+InitSelect	music_player/select.c	/^void InitSelect()$/;"	f
+InitShm	music_player/player.c	/^int InitShm()$/;"	f
+InitSocket	music_player/socket.c	/^int InitSocket()$/;"	f
+InsertLink	music_player/link.c	/^int InsertLink(Node *h, const char *name)$/;"	f
+LINK_H	music_player/link.h	2;"	d
+MAIN_H	music_player/main.h	2;"	d
+MUSICPATH	music_player/player.h	7;"	d
+NODE_H	music_server/node.h	2;"	d
+NextMusic	music_player/link.c	/^void NextMusic(const char *cur, int mode, char *next)$/;"	f
+Node	music_player/link.h	/^struct Node$/;"	s
+Node	music_player/link.h	/^typedef struct Node Node;$/;"	t	typeref:struct:Node
+Node	music_server/node.h	/^struct Node $/;"	s
+Node	music_server/node.h	/^typedef struct Node Node;$/;"	t	typeref:struct:Node
+PLAYER_H	MusicAPP/player.h	2;"	d
+PLAYER_H	music_player/player.h	2;"	d
+PLAYER_H	music_server/player.h	2;"	d
+PORT	MusicAPP/widget.h	16;"	d
+PORT	music_server/server.h	18;"	d
+Player	MusicAPP/player.cpp	/^Player::Player(QTcpSocket *s, QWidget *parent) :$/;"	f	class:Player
+Player	MusicAPP/player.h	/^class Player : public QWidget$/;"	c
+Player	music_server/player.h	/^class Player$/;"	c
+PlayerServer	music_server/server.cpp	/^PlayerServer::PlayerServer(const char *ip, int port)$/;"	f	class:PlayerServer
+PlayerServer	music_server/server.h	/^class PlayerServer$/;"	c
+PriorMusic	music_player/link.c	/^void PriorMusic(const char *cur, int mode, char *prior)$/;"	f
+RANDOM	music_player/player.h	12;"	d
+SEQUENCEMODE	music_player/player.h	11;"	d
+SERVER_H	music_server/server.h	2;"	d
+SERVER_IP	music_player/socket.h	5;"	d
+SERVER_PORT	music_player/socket.h	4;"	d
+SHMKEY	music_player/player.h	8;"	d
+SHMSIZE	music_player/player.h	9;"	d
+SOCKET_H	music_player/socket.h	2;"	d
+START_PALY	MusicAPP/player.h	17;"	d
+STOP_PLAY	MusicAPP/player.h	19;"	d
+SUCCESS	music_player/main.h	4;"	d
+SUSPEND_PLAY	MusicAPP/player.h	18;"	d
+TIMEOUT	music_player/socket.h	7;"	d
+Ui	MusicAPP/player.h	/^namespace Ui {$/;"	n
+Ui	MusicAPP/widget.h	/^namespace Ui {$/;"	n
+WIDGET_H	MusicAPP/widget.h	2;"	d
+Widget	MusicAPP/widget.cpp	/^Widget::Widget(QWidget *parent) :$/;"	f	class:Widget
+Widget	MusicAPP/widget.h	/^class Widget : public QWidget$/;"	c
+app_bev	music_server/node.h	/^	struct bufferevent *app_bev;$/;"	m	struct:Node	typeref:struct:Node::bufferevent
+app_id	music_server/node.h	/^	char app_id[8];$/;"	m	struct:Node
+app_online_flag	music_server/node.h	/^	int app_online_flag;                 \/\/表示app 是否在线$/;"	m	struct:Node
+base	music_server/server.h	/^	struct event_base *base;             \/\/事件集合$/;"	m	class:PlayerServer	typeref:struct:PlayerServer::event_base
+bind_operation	MusicAPP/widget.cpp	/^void Widget::bind_operation()$/;"	f	class:Widget
+child_pid	music_player/player.h	/^	pid_t child_pid;$/;"	m	struct:shm
+closeEvent	MusicAPP/player.cpp	/^void Player::closeEvent(QCloseEvent *event)$/;"	f	class:Player
+connect_cb	music_player/socket.c	/^void *connect_cb(void *arg)$/;"	f
+continue_play	music_player/player.c	/^void continue_play()$/;"	f
+cur_name	music_player/player.h	/^	char cur_name[64];$/;"	m	struct:shm
+device_bev	music_server/node.h	/^	struct bufferevent *device_bev;$/;"	m	struct:Node	typeref:struct:Node::bufferevent
+device_id	music_server/node.h	/^	char device_id[8];$/;"	m	struct:Node
+event_cb	music_server/server.cpp	/^void PlayerServer::event_cb(struct bufferevent *bev, short what, void *ctx)$/;"	f	class:PlayerServer
+g_addr	music_player/player.c	/^void *g_addr = NULL;        \/\/ 共享内存映射地址$/;"	v
+g_buttonfd	music_player/main.c	/^int g_buttonfd = 3;$/;"	v
+g_ledfd	music_player/main.c	/^int g_ledfd;$/;"	v
+g_maxfd	music_player/main.c	/^int g_maxfd;$/;"	v
+g_mixerfd	music_player/main.c	/^int g_mixerfd;$/;"	v
+g_sockfd	music_player/main.c	/^int g_sockfd = 3;$/;"	v
+g_start_flag	music_player/player.c	/^int g_start_flag = 0;       \/\/ 表示没有开始播放音乐$/;"	v
+g_suspend_flag	music_player/player.c	/^int g_suspend_flag = 0;     \/\/表示没有暂停$/;"	v
+get_key_id	music_player/device.c	/^int get_key_id()$/;"	f
+grand_pid	music_player/player.h	/^	pid_t grand_pid;$/;"	m	struct:shm
+handler	music_player/main.c	/^void handler(int sig)$/;"	f
+head	music_player/main.c	/^struct Node *head;$/;"	v	typeref:struct:Node
+iLeft	music_player/player.c	/^int iLeft = 20;$/;"	v
+iRight	music_player/player.c	/^int iRight = 60;$/;"	v
+id	music_server/node.h	/^	char id[8];$/;"	m	struct:timeout_node
+l	music_server/node.h	/^	std::list<Node> *l;$/;"	m	struct:timeout_node
+l	music_server/server.cpp	/^std::list<Node> *PlayerServer::l = new std::list<Node>();$/;"	m	class:PlayerServer	file:
+l	music_server/server.h	/^	static std::list<Node> *l;$/;"	m	class:PlayerServer
+led_off	music_player/device.c	/^void led_off(int which)$/;"	f
+led_on	music_player/device.c	/^void led_on(int which)$/;"	f
+listener	music_server/server.h	/^	struct evconnlistener *listener;$/;"	m	class:PlayerServer	typeref:struct:PlayerServer::evconnlistener
+listener_cb	music_server/server.cpp	/^void PlayerServer::listener_cb(struct evconnlistener *listener, evutil_socket_t fd, struct sockaddr *addr, int socklen, void *arg)$/;"	f	class:PlayerServer
+m_mp3_end	music_player/player.c	/^int m_mp3_end(const char *name)$/;"	f
+m_select	music_player/select.c	/^void m_select()$/;"	f
+main	MusicAPP/main.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	music_player/main.c	/^int main()$/;"	f
+main	music_server/1-music.c	/^int main()$/;"	f
+main	music_server/2-app.c	/^int main()$/;"	f
+main	music_server/main.cpp	/^int main()$/;"	f
+music_name	music_player/link.h	/^	char music_name[64];$/;"	m	struct:Node
+next	music_player/link.h	/^	struct Node *next;$/;"	m	struct:Node	typeref:struct:Node::Node
+next_play	music_player/player.c	/^void next_play()$/;"	f
+on_circleButton_cliecked	MusicAPP/player.cpp	/^void Player::on_circleButton_cliecked()$/;"	f	class:Player
+on_downButton_clicked	MusicAPP/player.cpp	/^void Player::on_downButton_clicked()$/;"	f	class:Player
+on_nextButton_clicked	MusicAPP/player.cpp	/^void Player::on_nextButton_clicked()$/;"	f	class:Player
+on_priorButton_clicked	MusicAPP/player.cpp	/^void Player::on_priorButton_clicked()$/;"	f	class:Player
+on_pushButton_clicked	MusicAPP/widget.cpp	/^void Widget::on_pushButton_clicked()$/;"	f	class:Widget
+on_randomButton_cliecked	MusicAPP/player.cpp	/^void Player::on_randomButton_cliecked()$/;"	f	class:Player
+on_seqButton_cliecked	MusicAPP/player.cpp	/^void Player::on_seqButton_cliecked()$/;"	f	class:Player
+on_startButton_clicked	MusicAPP/player.cpp	/^void Player::on_startButton_clicked()$/;"	f	class:Player
+on_upButton_clicked	MusicAPP/player.cpp	/^void Player::on_upButton_clicked()$/;"	f	class:Player
+online_flag	music_server/node.h	/^	int online_flag;                     \/\/表示设备是否在线  0 表示不在线$/;"	m	struct:Node
+p	music_server/server.cpp	/^Player *PlayerServer::p = new Player();      \/\/创建播放器对象$/;"	m	class:PlayerServer	file:
+p	music_server/server.h	/^	static Player *p;$/;"	m	class:PlayerServer
+parse_message	music_player/select.c	/^void parse_message(const char *m, char *c)$/;"	f
+play_flag	MusicAPP/player.h	/^    int play_flag;$/;"	m	class:Player
+play_mode	music_player/player.h	/^	int play_mode;$/;"	m	struct:shm
+play_music	music_player/player.c	/^void play_music(const char *name)$/;"	f
+player_alive_info	music_server/player.cpp	/^void Player::player_alive_info(std::list<Node> *l, struct bufferevent *bev, Json::Value val, struct event_base *base)$/;"	f	class:Player
+player_operation	music_server/player.cpp	/^void Player::player_operation(std::list<Node> *l, struct bufferevent *app_bev, const char *cmd)$/;"	f	class:Player
+player_reply_result	music_server/player.cpp	/^void Player::player_reply_result(std::list<Node> *l, struct bufferevent *bev, Json::Value val)$/;"	f	class:Player
+ppid	music_player/player.h	/^	pid_t ppid;$/;"	m	struct:shm
+prior	music_player/link.h	/^	struct Node *prior;$/;"	m	struct:Node	typeref:struct:Node::Node
+prior_play	music_player/player.c	/^void prior_play()$/;"	f
+read_cb	music_server/server.cpp	/^void PlayerServer::read_cb(struct bufferevent *bev, void *ctx)$/;"	f	class:PlayerServer
+readfd	music_player/main.c	/^fd_set readfd, tmpfd;$/;"	v
+receive	music_server/1-music.c	/^void *receive(void *arg)$/;"	f
+receive	music_server/2-app.c	/^void *receive(void *arg)$/;"	f
+send_server	music_player/socket.c	/^void send_server(int sig)$/;"	f
+server_reply_slot	MusicAPP/player.cpp	/^void Player::server_reply_slot()$/;"	f	class:Player
+server_reply_slot	MusicAPP/widget.cpp	/^void Widget::server_reply_slot()$/;"	f	class:Widget
+set_mode	music_player/player.c	/^void set_mode(int mode)$/;"	f
+shm	music_player/player.h	/^struct shm$/;"	s
+shm	music_player/player.h	/^typedef struct shm shm;$/;"	t	typeref:struct:shm
+shmid	music_player/player.c	/^int shmid;				    \/\/ 共享内存ID $/;"	v
+show	music_player/select.c	/^void show()$/;"	f
+socket	MusicAPP/player.h	/^    QTcpSocket *socket;$/;"	m	class:Player
+socket	MusicAPP/widget.h	/^    QTcpSocket *socket;$/;"	m	class:Widget
+socket_continue_play	music_player/socket.c	/^void socket_continue_play()$/;"	f
+socket_get_music	music_player/socket.c	/^void socket_get_music()$/;"	f
+socket_get_status	music_player/socket.c	/^void socket_get_status()$/;"	f
+socket_mode_play	music_player/socket.c	/^void socket_mode_play(int mode)$/;"	f
+socket_next_play	music_player/socket.c	/^void socket_next_play()$/;"	f
+socket_prior_play	music_player/socket.c	/^void socket_prior_play()$/;"	f
+socket_start_play	music_player/socket.c	/^void socket_start_play()$/;"	f
+socket_stop_play	music_player/socket.c	/^void socket_stop_play()$/;"	f
+socket_suspend_play	music_player/socket.c	/^void socket_suspend_play()$/;"	f
+socket_voice_down_play	music_player/socket.c	/^void socket_voice_down_play()$/;"	f
+socket_voice_up_play	music_player/socket.c	/^void socket_voice_up_play()$/;"	f
+start_play	music_player/player.c	/^void start_play()$/;"	f
+stop_play	music_player/player.c	/^void stop_play()$/;"	f
+suspend_play	music_player/player.c	/^void suspend_play()$/;"	f
+tNode	music_server/node.h	/^typedef struct timeout_node tNode;$/;"	t	typeref:struct:timeout_node
+time	music_server/node.h	/^	time_t time;$/;"	m	struct:Node
+timeout	music_server/node.h	/^	struct event timeout;                \/\/定时器事件$/;"	m	struct:Node	typeref:struct:Node::event
+timeout_cb	music_server/player.cpp	/^void Player::timeout_cb(evutil_socket_t fd, short event, void *arg)$/;"	f	class:Player
+timeout_node	music_server/node.h	/^struct timeout_node$/;"	s
+timeout_slot	MusicAPP/player.cpp	/^void Player::timeout_slot()$/;"	f	class:Player
+timer	MusicAPP/player.h	/^    QTimer timer;$/;"	m	class:Player
+tmpfd	music_player/main.c	/^fd_set readfd, tmpfd;$/;"	v
+ui	MusicAPP/player.h	/^    Ui::Player *ui;$/;"	m	class:Player
+ui	MusicAPP/widget.h	/^    Ui::Widget *ui;$/;"	m	class:Widget
+voice_down	music_player/player.c	/^void voice_down()$/;"	f
+voice_up	music_player/player.c	/^void voice_up()$/;"	f
+~Player	MusicAPP/player.cpp	/^Player::~Player()$/;"	f	class:Player
+~PlayerServer	music_server/server.cpp	/^PlayerServer::~PlayerServer()$/;"	f	class:PlayerServer
+~Widget	MusicAPP/widget.cpp	/^Widget::~Widget()$/;"	f	class:Widget
