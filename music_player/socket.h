@@ -1,9 +1,9 @@
 #ifndef SOCKET_H
 #define SOCKET_H
 
-// #define SERVER_IP     "47.101.128.140" // 设置阿里云服务端
-#define SERVER_PORT  8000
-#define SERVER_IP    "192.168.221.129"
+// #define SERVER_IP     "47.101.128.140" // 设置阿里云服务端公网IP
+#define SERVER_PORT  8000                 // 测试端口
+#define SERVER_IP    "192.168.221.129"    // 本地测试 IP
 #define TIMEOUT       1
 
 // 初始化客户端socket
