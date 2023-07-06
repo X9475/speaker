@@ -19,7 +19,7 @@
 
   jsoncpp：\
   sudo apt-get install libjsoncpp-dev  \
-  引用头文件：#include "jsoncpp/json/json.h  \
+  引用头文件：#include "jsoncpp/json/json.h"  \
   编译：-ljsoncpp
 
   madplay:  \
