@@ -459,7 +459,7 @@ Makefile: ../MusicAPP/MusicAPP.pro /opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/linux-g++
 		/opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/features/lex.prf \
 		../MusicAPP/MusicAPP.pro \
-		../../../Pictures/res.qrc
+		../MusicAPP/images/res.qrc
 	$(QMAKE) -o Makefile ../MusicAPP/MusicAPP.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 /opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/features/spec_pre.prf:
 /opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/common/unix.conf:
@@ -652,7 +652,7 @@ Makefile: ../MusicAPP/MusicAPP.pro /opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/linux-g++
 /opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/features/yacc.prf:
 /opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/features/lex.prf:
 ../MusicAPP/MusicAPP.pro:
-../../../Pictures/res.qrc:
+../MusicAPP/images/res.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../MusicAPP/MusicAPP.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 
@@ -667,7 +667,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../Pictures/res.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents ../MusicAPP/images/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt5.12.8/5.12.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../MusicAPP/widget.h ../MusicAPP/player.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../MusicAPP/main.cpp ../MusicAPP/widget.cpp ../MusicAPP/player.cpp $(DISTDIR)/
@@ -698,15 +698,15 @@ benchmark: first
 compiler_rcc_make_all: qrc_res.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_res.cpp
-qrc_res.cpp: ../../../Pictures/res.qrc \
+qrc_res.cpp: ../MusicAPP/images/res.qrc \
 		/opt/Qt5.12.8/5.12.8/gcc_64/bin/rcc \
-		../../../Pictures/prior.png \
-		../../../Pictures/player.png \
-		../../../Pictures/voice.png \
-		../../../Pictures/next.png \
-		../../../Pictures/suspend.png \
-		../../../Pictures/start.png
-	/opt/Qt5.12.8/5.12.8/gcc_64/bin/rcc -name res ../../../Pictures/res.qrc -o qrc_res.cpp
+		../MusicAPP/images/prior.png \
+		../MusicAPP/images/player.png \
+		../MusicAPP/images/voice.png \
+		../MusicAPP/images/next.png \
+		../MusicAPP/images/start.png \
+		../MusicAPP/images/suspend.png
+	/opt/Qt5.12.8/5.12.8/gcc_64/bin/rcc -name res ../MusicAPP/images/res.qrc -o qrc_res.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:

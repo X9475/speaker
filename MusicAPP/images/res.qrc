@@ -1,2 +1,10 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/">
+        <file>next.png</file>
+        <file>player.png</file>
+        <file>prior.png</file>
+        <file>start.png</file>
+        <file>suspend.png</file>
+        <file>voice.png</file>
+    </qresource>
+</RCC>

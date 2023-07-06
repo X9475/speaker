@@ -34,4 +34,4 @@ FORMS    += widget.ui \
     player.ui
 
 RESOURCES += \
-    ../../../Pictures/res.qrc
+    images/res.qrc
