@@ -16,12 +16,12 @@ int         g_buttonfd;
 int         g_ledfd;
 int         g_mixerfd;
 int         g_sockfd;
-Node 		*head;
+Node 	    *head;
 extern int  shmid;
 extern void *g_addr;
 fd_set      readfd, tmpfd;
 int         g_maxfd;
-int			num = 0; // 记录歌曲的数目
+int         num = 0; // 记录歌曲的数目
 
 
 // 信号SIGINT处理函数

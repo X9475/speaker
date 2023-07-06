@@ -1,4 +1,4 @@
-// 模拟客户端
+// 模拟客户端（用于测试服务端响应效果）
 #include <stdio.h>
 #include <sys/types.h>    
 #include <sys/socket.h>

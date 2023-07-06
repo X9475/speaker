@@ -12,13 +12,13 @@ LIBS   = -lpthread -ljson-c
 all: $(PROJ) $(LPRJ)
 
 $(PROJ): $(OBJS)
-		$(LINK) $^ $(LIBS) -o $@
+	$(LINK) $^ $(LIBS) -o $@
 
 $(LPRJ): $(LOBJ)
-		$(AR) $@ $^
+	$(AR) $@ $^
 
 .c.o:
-		$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 
 clean:
 	$(RM) $(PROJ) $(LPRJ) $(OBJS)

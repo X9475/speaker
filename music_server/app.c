@@ -1,4 +1,4 @@
-// 模拟 app 端
+// 模拟 app 端（用于测试与服务端的交互效果）
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>

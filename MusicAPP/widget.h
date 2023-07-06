@@ -22,11 +22,11 @@ public:
     ~Widget();
 
 private slots:
-    void on_pushButton_clicked();
-    void server_reply_slot();
+    void on_pushButton_clicked(); // 绑定按钮被点击
+    void server_reply_slot();     // 接收服务端响应槽函数
 
 private:
-    void bind_operation();
+    void bind_operation();        // 执行绑定操作
 
 private:
     Ui::Widget *ui;
