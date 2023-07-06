@@ -104,17 +104,19 @@ void PriorMusic(const char *cur, int mode, char *prior)
 		return;
 	} else if (mode == RANDOM) {
 		Node *p = head->next;
-		srand(time(NULL));
-		int num = rand() % 100;
-		for (int i = 0; i < num; i++) { 
-			p = p->next;
+		while (1) {
+			srand(time(NULL));
+			int num = rand() % 100; // 100 可根据实际歌曲数目进行更改
+			for (int i = 0; i < num; i++) { 
+				p = p->next;
+			}
+			if (p == head || !strcmp(p->music_name,cur)) {
+				continue;
+			} else {
+				strcpy(prior, p->music_name);
+				return;
+			}
 		}
-		if (p == head) {
-			strcpy(prior, p->next->music_name);
-		} else {
-			strcpy(prior, p->music_name);
-		}
-		return;
 	} else if (mode == CIRCLE) {
 		strcpy(prior, cur);
 		return;
@@ -138,18 +140,19 @@ void NextMusic(const char *cur, int mode, char *next)
 		return;
 	} else if (mode == RANDOM) {
 		Node *p = head->next;
-		srand(time(NULL));
-		int num = rand() % 100;
-		for (int i = 0; i < num; i++) {
-			p = p->next;
+		while (1) {
+			srand(time(NULL));
+			int num = rand() % 100; // 100 可根据实际歌曲数目进行更改
+			for (int i = 0; i < num; i++) {
+				p = p->next;
+			}
+			if (p == head || !strcmp(p->music_name,cur)) {
+				continue;
+			} else {
+				strcpy(next, p->music_name);
+				return;
+			}
 		}
-		if (p == head) {
-			strcpy(next, p->next->music_name);
-		} else {
-			strcpy(next, p->music_name);
-		}
-
-		return;
 	} else if (mode == CIRCLE) {
 		strcpy(next, cur);
 	}

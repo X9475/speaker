@@ -34,12 +34,6 @@ private slots:
 
     void on_nextButton_clicked();
 
-    void slider_changed_slot();
-
-    void on_upButton_clicked();
-
-    void on_downButton_clicked();
-
     void on_seqButton_cliecked();
 
     void on_circleButton_cliecked();
@@ -48,11 +42,14 @@ private slots:
 
     void timeout_slot();
 
+    void on_voiceSlider_valueChanged(int value);
+
 private:
     Ui::Player *ui;
     QTcpSocket *socket;
     int play_flag;
     QTimer timer;
+    static int vals;
 };
 
 #endif // PLAYER_H

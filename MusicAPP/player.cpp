@@ -7,12 +7,10 @@ Player::Player(QTcpSocket *s, QWidget *parent) :
 {
     ui->setupUi(this);
     socket = s;
-    this->setFixedSize(QSize(538,323));
-    play_flag = STOP_PLAY;
+    this->setFixedSize(QSize(512,314));
     ui->seqButton->setChecked(true);
-
     connect(socket, &QTcpSocket::readyRead, this, &Player::server_reply_slot);
-    //RadioButton信号与槽
+    // RadioButton信号与槽
     connect(ui->seqButton, &QRadioButton::clicked, this, &Player::on_seqButton_cliecked);
     connect(ui->randomButton, &QRadioButton::clicked, this, &Player::on_randomButton_cliecked);
     connect(ui->circleButton, &QRadioButton::clicked, this, &Player::on_circleButton_cliecked);
@@ -27,6 +25,8 @@ Player::~Player()
 {
     delete ui;
 }
+
+int Player::vals = 50;
 
 void Player::timeout_slot()
 {
@@ -48,38 +48,46 @@ void Player::server_reply_slot()
     if (cmd == "app_reply") {
         QString result = obj.value("result").toString();
         if (result == "start_success") {
-            ui->startButton->setText("||");
+            ui->startButton->setIcon(QIcon(":/start.png"));
             play_flag = START_PALY;
         }
         else if (result == "suspend_success") {
-            ui->startButton->setText("|>");
+            ui->startButton->setIcon(QIcon(":/suspend.png"));
             play_flag = SUSPEND_PLAY;
         }
         else if (result == "continue_success") {
-            ui->startButton->setText("||");
+            ui->startButton->setIcon(QIcon(":/start.png"));
+            play_flag = START_PALY;
+        }
+        else if (result == "next_success") {
+            play_flag = START_PALY;
+        }
+        else if (result == "prior_success") {
             play_flag = START_PALY;
         }
         else if (result == "off_line") {
             QMessageBox::warning(this, "Warm Prompt", "Device off_line");
         }
     } else if (cmd == "app_reply_status") { // 播放器状态的回复
-        // 播放状态、歌曲名、音量
         QString status = obj.value("status").toString();
+        QString music = obj.value("music").toString();
         if (status == "start") {
             play_flag = START_PALY;
-            ui->startButton->setText("||");
+            ui->startButton->setIcon(QIcon(":/start.png"));
         }
         else if (status == "suspend") {
             play_flag = SUSPEND_PLAY;
-            ui->startButton->setText("|>");
+            ui->startButton->setIcon(QIcon(":/suspend.png"));
         }
         else if (status == "stop") {
             play_flag = STOP_PLAY;
-            ui->startButton->setText("|>");
+            ui->startButton->setIcon(QIcon(":/suspend.png"));
         }
+
+        ui->curEdit->setText(music);
     }
     else if (cmd == "app_reply_music") {  // 所有音乐的回复
-        QJsonArray arr = obj.value("music").toArray();  // 转换成json数组
+        QJsonArray arr = obj.value("music").toArray(); // 转换成json数组
         QString result;
         for (int i = 0; i < arr.count(); i++) {
             result.append(arr.at(i).toString());
@@ -89,8 +97,24 @@ void Player::server_reply_slot()
     }
 }
 
-void Player::slider_changed_slot(){
 
+void Player::on_voiceSlider_valueChanged(int value)
+{
+    Q_UNUSED(value);
+    int val = ui->voiceSlider->value();
+    if (val < vals) {
+        vals = val;
+        QJsonObject obj;
+        obj.insert("cmd", "app_voice_down");
+        QByteArray ba = QJsonDocument(obj).toJson();
+        socket->write(ba);
+    } else if (val > vals) {
+        vals = val;
+        QJsonObject obj;
+        obj.insert("cmd", "app_voice_up");
+        QByteArray ba = QJsonDocument(obj).toJson();
+        socket->write(ba);
+    }
 }
 
 void Player::on_startButton_clicked()
@@ -125,25 +149,8 @@ void Player::on_priorButton_clicked()
 
 void Player::on_nextButton_clicked()
 {
-    ui->startButton->setText("|>");
     QJsonObject obj;
     obj.insert("cmd", "app_next");
-    QByteArray ba = QJsonDocument(obj).toJson();
-    socket->write(ba);
-}
-
-void Player::on_upButton_clicked()
-{
-    QJsonObject obj;
-    obj.insert("cmd", "app_voice_up");
-    QByteArray ba = QJsonDocument(obj).toJson();
-    socket->write(ba);
-}
-
-void Player::on_downButton_clicked()
-{
-    QJsonObject obj;
-    obj.insert("cmd", "app_voice_down");
     QByteArray ba = QJsonDocument(obj).toJson();
     socket->write(ba);
 }

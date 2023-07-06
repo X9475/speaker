@@ -700,7 +700,12 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_res.cpp
 qrc_res.cpp: ../../../Pictures/res.qrc \
 		/opt/Qt5.12.8/5.12.8/gcc_64/bin/rcc \
-		../../../Pictures/player.png
+		../../../Pictures/prior.png \
+		../../../Pictures/player.png \
+		../../../Pictures/voice.png \
+		../../../Pictures/next.png \
+		../../../Pictures/suspend.png \
+		../../../Pictures/start.png
 	/opt/Qt5.12.8/5.12.8/gcc_64/bin/rcc -name res ../../../Pictures/res.qrc -o qrc_res.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -1251,6 +1256,8 @@ widget.o: ../MusicAPP/widget.cpp ../MusicAPP/widget.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QCloseEvent \
 		ui_widget.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QIcon \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qicon.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QApplication \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qapplication.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1276,7 +1283,6 @@ widget.o: ../MusicAPP/widget.cpp ../MusicAPP/widget.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QPushButton \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qpushbutton.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qicon.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QSpacerItem \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../MusicAPP/widget.cpp
@@ -1406,6 +1412,8 @@ player.o: ../MusicAPP/player.cpp ../MusicAPP/player.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QCloseEvent \
 		ui_player.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QIcon \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qicon.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QApplication \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qapplication.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1422,21 +1430,25 @@ player.o: ../MusicAPP/player.cpp ../MusicAPP/player.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QLabel \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qlabel.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qframe.h \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextformat.h \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QPushButton \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qpushbutton.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qicon.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QRadioButton \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qradiobutton.h \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QSlider \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qslider.h \
+		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qabstractslider.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QSpacerItem \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QTextEdit \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qtextedit.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextdocument.h \
-		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextcursor.h \
-		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextformat.h \
-		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.12.8/5.12.8/gcc_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../MusicAPP/player.cpp
 
