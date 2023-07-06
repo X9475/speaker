@@ -150,7 +150,7 @@ void play_music(const char *name)
 				memset((void *)name, 0, strlen(name));          // 歌曲名长度变为0，方便下一次操作
 				int status;
 				waitpid(grand_pid, &status, 0);                 // 回收孙进程
-				printf("status: %d\n", status);
+				printf("grand_pid status: %d\n", status);
 			}
 		}
 	}
