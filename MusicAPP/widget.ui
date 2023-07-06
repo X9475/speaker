@@ -23,7 +23,7 @@
    <string>bind</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../Pictures/res.qrc">
+   <iconset resource="images/res.qrc">
     <normaloff>:/player.png</normaloff>:/player.png</iconset>
   </property>
   <property name="autoFillBackground">
@@ -167,7 +167,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../../Pictures/res.qrc"/>
+  <include location="images/res.qrc"/>
  </resources>
  <connections/>
 </ui>
